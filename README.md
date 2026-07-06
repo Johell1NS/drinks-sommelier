@@ -220,22 +220,22 @@ drinks-sommelier/
     └── vini-noti-preferiti.md
 ```
 
-Su alcuni sistemi (noto su Windows) `npx skills add` potrebbe copiare solo SKILL.md. In tal caso, clona il repository direttamente nella cartella della skill:
+Su alcuni sistemi (noto su Windows) `npx skills add` potrebbe copiare solo SKILL.md. In tal caso:
 
 ```bash
-# Sostituisci <PATH_AGENTE> con la cartella skills del tuo agente
-# Esempio su Windows (OpenCode):
-cd C:\Users\Utente\.agents\skills
-# Esempio su Linux/Mac:
-cd ~/.agents/skills
-
-# Se la cartella drinks-sommelier esiste già, eliminala
-rmdir /s drinks-sommelier   # Windows
-# rm -rf drinks-sommelier   # Linux/Mac
-
-# Clona nel posto giusto
-git clone https://github.com/Johell1NS/drinks-sommelier.git
+# Clona direttamente nella cartella della skill (sostituisce i file mancanti)
+git clone https://github.com/Johell1NS/drinks-sommelier.git ~/.agents/skills/drinks-sommelier
 ```
+
+Se il comando precedente fallisce perché la cartella esiste già (creata da `npx skills add`), eliminala prima:
+
+```bash
+rm -r ~/.agents/skills/drinks-sommelier   # Linux/Mac
+rmdir /s ~/.agents/skills/drinks-sommelier # Windows cmd
+# Oppure cancella manualmente la cartella drinks-sommelier dentro ~/.agents/skills/
+```
+
+E poi rilancia il `git clone`.
 
 Ora hai tutti i file. La skill è pronta all'uso.
 
