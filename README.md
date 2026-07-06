@@ -4,6 +4,10 @@
   <img src="img/drinks-sommelier-logo.png" alt="drinks-sommelier" width="600">
 </p>
 
+<p align="center"><b>English</b> · <a href="i18n/README.zh-CN.md">简体中文</a> · <a href="i18n/README.es.md">Español</a> · <a href="i18n/README.ja.md">日本語</a> · <a href="i18n/README.ko.md">한국어</a> · <a href="i18n/README.pt-BR.md">Português (Brasil)</a> · <a href="i18n/README.fr.md">Français</a> · <a href="i18n/README.de.md">Deutsch</a> · <a href="i18n/README.ru.md">Русский</a> · <a href="i18n/README.ar.md">العربية</a> · <a href="i18n/README.hi.md">हिन्दी</a> · <a href="i18n/README.it.md">Italiano</a></p>
+
+
+
 <p align="center">
   <strong>A sommelier in your pocket, always by your side.</strong><br>
   <em>Shelves, menus, wine cellars: wherever you are, it knows what to recommend.</em>
@@ -187,13 +191,14 @@ drinks-sommelier/
 ├── README.md                ← This file
 ├── LICENSE                  ← MIT License
 ├── .gitignore
+├── img/                     ← Logo and graphic assets
+├── i18n/                    ← Translations
 └── skills/
     └── drinks-sommelier/    ← The actual skill
         ├── SKILL.md         ← Complete instructions for the agent
         │                      (frontmatter, tastes, operations,
         │                       edge cases, best practices, examples,
         │                       preference updates)
-        ├── README.md
         └── data/
             ├── SETUP.md                   ← Initial setup guide
             │                                (used only on first launch)
