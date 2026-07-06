@@ -235,6 +235,13 @@ no external dependencies. The skill is purely textual — instructions
 that the agent follows. The only dependencies are the agent's own
 capabilities (image analysis, web search).
 
+> **💡 Web search.** To give you accurate, hallucination-free recommendations,
+> the skill needs to research each product online. While most AI agents have
+> basic web search capabilities, we recommend the
+> **[browser-search](https://github.com/Johell1NS/browser-search)** skill:
+> it searches dozens of engines simultaneously and bypasses anti-bot
+> systems, ensuring the agent finds the information it needs every time.
+
 ---
 
 ## Configuration
