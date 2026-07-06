@@ -359,7 +359,7 @@ supports. If your agent already has reliable web search capabilities,
 you do not need anything else.
 
 However, if you want to ensure thorough, anti-bot-resistant searches
-every time (especially useful for finding obscure beers or wines),
+every time (especially useful when product pages are behind anti-bot systems),
 consider installing the companion
 **[browser-search](https://github.com/Johell1NS/browser-search)** skill.
 It searches dozens of engines simultaneously and helps the agent find
