@@ -230,13 +230,6 @@ your agent's skills directory.
 > other agents may differ). Once it's there, the agent detects it
 > automatically.
 
-> **💡 Web search.** To give you accurate, hallucination-free recommendations,
-> the skill needs to research each product online. While most AI agents have
-> basic web search capabilities, we recommend the
-> **[browser-search](https://github.com/Johell1NS/browser-search)** skill:
-> it searches dozens of engines simultaneously and bypasses anti-bot
-> systems, ensuring the agent finds the information it needs every time.
-
 ---
 
 ## Configuration
@@ -356,6 +349,21 @@ to be even more precise next time.
 - **It does not handle other beverages.** Spirits, cocktails, liquors,
   sodas, non-alcoholic drinks — anything that is not beer or wine is
   ignored.
+
+---
+
+## Suggestions (optional)
+
+**drinks-sommelier** works with any web search tool your agent natively
+supports. If your agent already has reliable web search capabilities,
+you do not need anything else.
+
+However, if you want to ensure thorough, anti-bot-resistant searches
+every time (especially useful for finding obscure beers or wines),
+consider installing the companion
+**[browser-search](https://github.com/Johell1NS/browser-search)** skill.
+It searches dozens of engines simultaneously and helps the agent find
+product information even when standard tools struggle.
 
 ---
 
