@@ -86,6 +86,12 @@ All in a transparent, honest, free way and without inventing anything.
 
 ---
 
+⭐ **Enjoying drinks-sommelier?** Star the repo, follow the project,
+and help it grow. The best recommendations are the ones you share —
+suggestions and contributions are always welcome.
+
+---
+
 ## How it works
 
 The process is divided into 5 phases, executed in sequence by the agent each

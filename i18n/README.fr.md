@@ -84,6 +84,12 @@ Le tout de manière transparente, honnête, gratuite et sans rien inventer.
 
 ---
 
+⭐ **Vous aimez drinks-sommelier ?** Mettez une étoile, suivez le projet
+et aidez-le à grandir. Les meilleures recommandations sont celles
+que l'on partage — suggestions et contributions sont toujours les bienvenues.
+
+---
+
 ## Comment ça fonctionne
 
 Le processus est divisé en 5 phases, exécutées en séquence par l'agent à chaque

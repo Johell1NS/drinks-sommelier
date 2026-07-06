@@ -84,6 +84,12 @@ Alles transparent, ehrlich, kostenlos und ohne etwas zu erfinden.
 
 ---
 
+⭐ **Gefällt dir drinks-sommelier?** Gib einen Stern, folge dem Projekt
+und hilf mit, es wachsen zu lassen. Die besten Empfehlungen sind die,
+die man teilt — Vorschläge und Beiträge sind immer willkommen.
+
+---
+
 ## Wie es funktioniert
 
 Der Prozess ist in 5 Phasen unterteilt, die vom Agenten bei jeder
