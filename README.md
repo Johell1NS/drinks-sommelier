@@ -205,7 +205,29 @@ drinks-sommelier/
 npx skills add Johell1NS/drinks-sommelier
 ```
 
-Questo comando scarica la skill e la installa automaticamente nel tuo agente. Include SKILL.md, README.md, SETUP.md e tutti i file necessari.
+### Verifica
+
+Dopo l'installazione, controlla che la cartella della skill contenga tutti i file necessari:
+
+```
+drinks-sommelier/
+├── SKILL.md
+├── README.md
+├── LICENSE
+└── data/
+    ├── SETUP.md
+    ├── birre-note-preferite.md
+    └── vini-noti-preferiti.md
+```
+
+Su alcuni sistemi (noto su Windows) `npx skills add` potrebbe copiare solo SKILL.md. In tal caso, clona il repository:
+
+```bash
+git clone https://github.com/Johell1NS/drinks-sommelier.git
+cd drinks-sommelier
+```
+
+Ora hai tutti i file. La skill è pronta all'uso.
 
 **Non serve installare nulla.** Nessun Docker, nessun npm package,
 nessuna dipendenza esterna. La skill è puramente testuale — istruzioni
