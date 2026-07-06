@@ -1,6 +1,10 @@
 # drinks-sommelier
 
 <p align="center">
+  <img src="img/drinks-sommelier-logo.png" alt="drinks-sommelier" width="600">
+</p>
+
+<p align="center">
   <strong>A sommelier in your pocket, always by your side.</strong><br>
   <em>Shelves, menus, wine cellars: wherever you are, it knows what to recommend.</em>
 </p>
