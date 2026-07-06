@@ -219,10 +219,16 @@ npx skills add Johell1NS/drinks-sommelier --skill drinks-sommelier
 
 ```bash
 git clone https://github.com/Johell1NS/drinks-sommelier.git
-cd drinks-sommelier/skills/drinks-sommelier
 ```
 
-After installation, point your agent to the `drinks-sommelier/` folder (if using `npx`) or `drinks-sommelier/skills/drinks-sommelier/` (if using `git clone`).
+Then copy (or symlink) the `skills/drinks-sommelier/` folder into
+your agent's skills directory.
+
+> **Note:** unlike `npx skills add`, git clone does not know where your
+> agent's skills are stored. You need to place the skill in the correct
+> path for your agent (e.g., OpenCode uses `~/.config/opencode/skills/`,
+> other agents may differ). Once it's there, the agent detects it
+> automatically.
 
 **No need to install anything.** No Docker, no npm packages,
 no external dependencies. The skill is purely textual — instructions
