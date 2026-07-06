@@ -180,64 +180,45 @@ L'agente struttura la risposta in modo chiaro:
 
 ```
 drinks-sommelier/
-├── SKILL.md                 ← Istruzioni complete per l'agente
-│                              (frontmatter, gusti, operatività,
-│                               edge case, best practices, esempi,
-│                               aggiornamento preferenze)
 ├── README.md                ← Questo file
 ├── LICENSE                  ← Licenza MIT
-└── data/
-    ├── SETUP.md             ← Guida alla configurazione iniziale
-    │                          (usata solo il primo avvio)
-    ├── birre-note-preferite.md  ← Birre apprezzate e non
-    │                               (da compilare con l'uso)
-    └── vini-noti-preferiti.md   ← Vini apprezzati e non
-                                    (da compilare con l'uso)
+├── .gitignore
+└── skills/
+    └── drinks-sommelier/    ← La skill vera e propria
+        ├── SKILL.md         ← Istruzioni complete per l'agente
+        │                      (frontmatter, gusti, operatività,
+        │                       edge case, best practices, esempi,
+        │                       aggiornamento preferenze)
+        ├── README.md
+        └── data/
+            ├── SETUP.md             ← Guida alla configurazione iniziale
+            │                          (usata solo il primo avvio)
+            ├── birre-note-preferite.md  ← Birre apprezzate e non
+            │                               (da compilare con l'uso)
+            └── vini-noti-preferiti.md   ← Vini apprezzati e non
+                                            (da compilare con l'uso)
 ```
 
 ---
 
 ## Installazione
 
-### Unico passo
+Puoi installare la skill in due modi:
+
+### Con npx skills (consigliato)
 
 ```bash
-npx skills add Johell1NS/drinks-sommelier
+npx skills add Johell1NS/drinks-sommelier --skill drinks-sommelier
 ```
 
-### Verifica
-
-Dopo l'installazione, controlla che la cartella della skill contenga tutti i file necessari:
-
-```
-drinks-sommelier/
-├── SKILL.md
-├── README.md
-├── LICENSE
-└── data/
-    ├── SETUP.md
-    ├── birre-note-preferite.md
-    └── vini-noti-preferiti.md
-```
-
-Su alcuni sistemi (noto su Windows) `npx skills add` potrebbe copiare solo SKILL.md. In tal caso:
+### Con git clone
 
 ```bash
-# Clona direttamente nella cartella della skill (sostituisce i file mancanti)
-git clone https://github.com/Johell1NS/drinks-sommelier.git ~/.agents/skills/drinks-sommelier
+git clone https://github.com/Johell1NS/drinks-sommelier.git
+cd drinks-sommelier/skills/drinks-sommelier
 ```
 
-Se il comando precedente fallisce perché la cartella esiste già (creata da `npx skills add`), eliminala prima:
-
-```bash
-rm -r ~/.agents/skills/drinks-sommelier   # Linux/Mac
-rmdir /s ~/.agents/skills/drinks-sommelier # Windows cmd
-# Oppure cancella manualmente la cartella drinks-sommelier dentro ~/.agents/skills/
-```
-
-E poi rilancia il `git clone`.
-
-Ora hai tutti i file. La skill è pronta all'uso.
+Dopo l'installazione, punta il tuo agente alla cartella `drinks-sommelier/` (se usi `npx`) o `drinks-sommelier/skills/drinks-sommelier/` (se usi `git clone`).
 
 **Non serve installare nulla.** Nessun Docker, nessun npm package,
 nessuna dipendenza esterna. La skill è puramente testuale — istruzioni
