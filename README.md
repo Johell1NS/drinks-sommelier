@@ -1,351 +1,351 @@
 # drinks-sommelier
 
 <p align="center">
-  <strong>Un sommelier nel taschino, sempre al tuo fianco.</strong><br>
-  <em>Scaffali, menu, cantine: ovunque tu sia, lui sa cosa consigliarti.</em>
+  <strong>A sommelier in your pocket, always by your side.</strong><br>
+  <em>Shelves, menus, wine cellars: wherever you are, it knows what to recommend.</em>
 </p>
 
-> **Una skill per agenti AI.** OpenClaw, Hermes Agent, OpenCode, Claude Code, Cursor e oltre.
-> Un sommelier virtuale specializzato in birre e vini che impara i tuoi gusti
-> personali e ti suggerisce la scelta migliore da qualsiasi scaffale, menu
-> o lista. **Gratuita, open-source, auto-ospitata.**
+> **A skill for AI agents.** OpenClaw, Hermes Agent, OpenCode, Claude Code, Cursor, and beyond.
+> A virtual sommelier specialized in beers and wines that learns your personal
+> tastes and suggests the best choice from any shelf, menu,
+> or list. **Free, open-source, self-hosted.**
 
 ---
 
-## Perché esiste
+## Why it exists
 
-Al ristorante, al pub, all'enoteca, al supermercato: il problema è sempre
-lo stesso. **Decine di opzioni e nessuna certezza** su cosa prendere che sia
-davvero adatto ai tuoi gusti.
+At the restaurant, at the pub, at the wine shop, at the supermarket: the problem is always
+the same. **Dozens of options and no certainty** about what to pick that is
+truly suited to your tastes.
 
-Potresti chiedere al cameriere, aprire cinque schede sul telefono, o
-sperare che il nome più bello sia anche il migliore. Oppure puoi chiedere
-al tuo agente AI — e lui sa già cosa ti piace.
+You could ask the waiter, open five tabs on your phone, or
+hope that the prettiest name is also the best. Or you can ask
+your AI agent — and it already knows what you like.
 
-**drinks-sommelier** insegna a qualsiasi agente AI a fare da sommelier
-personale. L'agente:
+**drinks-sommelier** teaches any AI agent to act as a personal
+sommelier. The agent:
 
-1. Impara le tue preferenze di gusto, una volta per tutte
-2. Analizza qualsiasi input: foto di uno scaffale, menu digitali, liste
-   di nomi scritte dall'utente
-3. Cerca informazioni aggiornate su ogni prodotto
-4. Confronta ogni prodotto con il tuo profilo gusti
-5. Ti dice esattamente cosa prendere — e perché
+1. Learns your taste preferences, once and for all
+2. Analyzes any input: photo of a shelf, digital menus, lists
+   of names written by the user
+3. Searches for updated information on each product
+4. Compares each product against your taste profile
+5. Tells you exactly what to pick — and why
 
-Il tutto in modo trasparente, onesto, gratuito e senza inventare niente.
-
----
-
-## Benefici
-
-- **Impara i tuoi gusti nel tempo.** Più usi la skill, più l'agente
-  conosce il tuo palato. Ogni interazione affina il profilo.
-
-- **Birre e vini in una skill unica.** Non devi installare due skill
-  separate. L'agente gestisce entrambe le categorie, riconoscendo
-  automaticamente cosa sta analizzando.
-
-- **Analisi da immagini e da testo.** Fotografa uno scaffale, un menu,
-  una carta dei vini. Oppure scrivi una lista. L'agente estrae solo
-  i prodotti pertinenti (birre e vini), ignorando tutto il resto.
-
-- **Niente allucinazioni.** L'agente ha il divieto assoluto di usare
-  le proprie conoscenze pre-addestramento. Ogni prodotto viene
-  ricercato puntualmente sul web prima di essere valutato.
-
-- **Indice di preferenza 0-100%.** Ogni suggerimento ha un punteggio
-  chiaro che dice quanto un prodotto è adatto ai tuoi gusti. Niente
-  mezze misure.
-
-- **Profilo gusti persistente.** Le tue preferenze sono salvate in
-  file di testo leggibili e modificabili. Non si perdono tra una
-  sessione e l'altra.
-
-- **Setup guidato dall'agente.** La prima volta, l'agente ti fa le
-  domande giuste per capire i tuoi gusti, senza lasciarti davanti
-  configurazioni manuali.
-
-- **Open-source, licenza MIT.** Gratuito, senza abbonamenti, senza
-  API key, senza limiti. Puoi usarlo, modificarlo, distribuirlo.
-
-- **Funziona con qualsiasi agente AI.** Scritta per OpenCode, ma
-  facilmente convertibile per OpenClaw, Hermes Agent, Claude Code, Cursor,
-  GitHub Copilot e qualsiasi altro agente. Mostra questo README al tuo
-  agente per una conversione semplice e automatica.
-
-- **Completamente personalizzabile.** SKILL.md è un file di testo.
-  Aggiungi regole, modifica i criteri, adattalo al tuo workflow.
+All in a transparent, honest, free way and without inventing anything.
 
 ---
 
-## Come funziona
+## Benefits
 
-Il processo si articola in 5 fasi, eseguite in sequenza dall'agente ogni
-volta che viene interrogato.
+- **Learns your tastes over time.** The more you use the skill, the more the agent
+  knows your palate. Each interaction refines the profile.
 
-### Fase 1 — Configurazione del profilo gusti (una tantum)
+- **Beers and wines in a single skill.** You do not need to install two separate
+  skills. The agent handles both categories, automatically recognizing
+  what it is analyzing.
 
-La prima volta che la skill viene caricata, l'agente verifica se i
-paragrafi "Gusti dell'utente per le birre" e "Gusti dell'utente per
-i vini" in SKILL.md sono già stati compilati.
+- **Analysis from images and text.** Take a photo of a shelf, a menu,
+  a wine list. Or write a list. The agent extracts only
+  the relevant products (beers and wines), ignoring everything else.
 
-Se non lo sono, l'agente apre il file `data/SETUP.md` che contiene:
-- Domande guida per raccogliere le preferenze (dolce/amaro, gradazione,
-  stili graditi e non, ecc.)
-- Esempi di paragrafi compilati correttamente
-- Esempi di file `data/` popolati
+- **No hallucinations.** The agent has the absolute prohibition of using
+  its own pre-training knowledge. Each product is
+  promptly researched on the web before being evaluated.
 
-L'agente ti fa le domande, raccoglie le risposte, e modifica
-i due paragrafi dei gusti in SKILL.md. Se durante la
-configurazione l'utente menziona prodotti specifici, l'agente
-li registra nei file `data/` corrispondenti (operazione
-facoltativa ma utile per affinare il profilo).
+- **Preference index 0-100%.** Each suggestion has a clear
+  score that says how well a product fits your tastes. No
+  half measures.
 
-Puoi anche compilare i paragrafi a mano, se preferisci.
+- **Persistent taste profile.** Your preferences are saved in
+  readable and editable text files. They are not lost between
+  one session and the next.
 
-I file `data/birre-note-preferite.md` e `data/vini-noti-preferiti.md`
-sono facoltativi e contengono prodotti specifici che hai già valutato
-in passato. Più sono completi, più l'agente capisce le tue sfumature.
+- **Agent-guided setup.** The first time, the agent asks you the
+  right questions to understand your tastes, without leaving you in front of
+  manual configurations.
 
-### Fase 2 — Analisi dell'input
+- **Open-source, MIT license.** Free, no subscriptions, no
+  API keys, no limits. You can use it, modify it, distribute it.
 
-L'agente identifica cosa hai a disposizione e in che formato:
+- **Works with any AI agent.** Written for OpenCode, but
+  easily convertible for OpenClaw, Hermes Agent, Claude Code, Cursor,
+  GitHub Copilot, and any other agent. Show this README to your
+  agent for a simple and automatic conversion.
 
-- **Testo**: estrae i nomi di birre e vini da una lista scritta
-- **Immagine**: analizza la foto (scaffale, menu, carta vini) e
-  riconosce solo i prodotti che sono birre o vini.
-  Ignora completamente: liquori, superalcolici, snack, pasti,
-  dessert, bibite, accessori. Qualsiasi cosa non sia birra o vino.
-- **Misto**: se mandi sia testo che immagini, analizza tutto.
+- **Fully customizable.** SKILL.md is a text file.
+  Add rules, modify criteria, adapt it to your workflow.
 
-Se l'input non è chiaro, l'agente chiede prima di procedere.
+---
 
-### Fase 3 — Ricerca web (anti-allucinazione)
+## How it works
 
-L'agente ha il **divieto assoluto** di usare le proprie conoscenze
-pre-addestramento per valutare un prodotto. Potrebbero essere obsolete,
-imprecise, o peggio: inventate. Per questo, esegue una ricerca web
-puntuale su ogni singolo prodotto identificato.
+The process is divided into 5 phases, executed in sequence by the agent each
+time it is queried.
 
-Cosa cerca l'agente:
+### Phase 1 — Taste profile setup (one-time)
 
-| Categoria | Informazioni raccolte |
+The first time the skill is loaded, the agent checks whether the
+paragraphs "User's tastes for beers" and "User's tastes for
+wines" in SKILL.md have already been filled in.
+
+If they have not, the agent opens the file `data/SETUP.md` which contains:
+- Guiding questions to gather preferences (sweet/bitter, alcohol content,
+  liked and disliked styles, etc.)
+- Examples of correctly filled-in paragraphs
+- Examples of populated `data/` files
+
+The agent asks you the questions, collects the answers, and modifies
+the two taste paragraphs in SKILL.md. If during the
+setup the user mentions specific products, the agent
+records them in the corresponding `data/` files (optional
+operation but useful to refine the profile).
+
+You can also fill in the paragraphs by hand, if you prefer.
+
+The files `data/known-preferred-beers.md` and `data/known-preferred-wines.md`
+are optional and contain specific products you have already evaluated
+in the past. The more complete they are, the more the agent understands your nuances.
+
+### Phase 2 — Input analysis
+
+The agent identifies what you have available and in what format:
+
+- **Text**: extracts the names of beers and wines from a written list
+- **Image**: analyzes the photo (shelf, menu, wine list) and
+  recognizes only products that are beers or wines.
+  Completely ignores: spirits, liquors, snacks, meals,
+  desserts, sodas, accessories. Anything that is not beer or wine.
+- **Mixed**: if you send both text and images, it analyzes everything.
+
+If the input is not clear, the agent asks before proceeding.
+
+### Phase 3 — Web research (anti-hallucination)
+
+The agent has the **absolute prohibition** of using its own
+pre-training knowledge to evaluate a product. It could be obsolete,
+imprecise, or worse: invented. For this reason, it performs a targeted web search
+on each and every identified product.
+
+What the agent searches for:
+
+| Category | Collected information |
 |---|---|
-| **Birre** | Stile, gradazione alcolica, dolcezza, amarezza (IBU), corpo, note aromatiche, ingredienti |
-| **Vini** | Vitigno, denominazione, zona di produzione, annata, corpo, acidità, tannicità, grado alcolico, note di dolcezza |
+| **Beers** | Style, alcohol content, sweetness, bitterness (IBU), body, aromatic notes, ingredients |
+| **Wines** | Grape variety, appellation, production area, vintage, body, acidity, tannicity, alcohol content, sweetness notes |
 
-Se un prodotto non è reperibile online, l'agente lo dichiara
-onestamente e non inventa caratteristiche.
+If a product is not findable online, the agent honestly states it
+and does not invent characteristics.
 
-### Fase 4 — Valutazione
+### Phase 4 — Evaluation
 
-L'agente confronta ogni prodotto con il tuo profilo gusti, che ha
-due livelli distinti:
+The agent compares each product against your taste profile, which has
+two distinct levels:
 
-1. **Regole di gusto** — le linee guida generali che hai scritto
-   nei paragrafi dei gusti (es. "birre dolci", "vini non troppo
-   dolci", "gradazione ≤ 9°"). Sono vincolanti.
-2. **Prodotti nei file data/** — esempi concreti di birre e vini
-   che hai apprezzato o non apprezzato. Servono a calibrare le
-   regole di gusto (es. se ami la birra X e odi la Y, l'agente
-   capisce cosa intendi per "dolce" e "amaro").
+1. **Taste rules** — the general guidelines you have written
+   in the taste paragraphs (e.g. "sweet beers", "wines not too
+   sweet", "alcohol content ≤ 9°"). They are binding.
+2. **Products in data/ files** — concrete examples of beers and wines
+   that you liked or disliked. They serve to calibrate the
+   taste rules (e.g. if you love beer X and hate Y, the agent
+   understands what you mean by "sweet" and "bitter").
 
-L'agente assegna un **indice di preferenza da 0 a 100%**:
+The agent assigns a **preference index from 0 to 100%**:
 
-| Indice | Significato |
+| Index | Meaning |
 |---|---|
-| 90-100% | Prodotto perfetto per i tuoi gusti |
-| 70-89% | Ottimo, lievi discrepanze |
-| 50-69% | Accettabile, ma non ottimale |
-| 30-49% | Poco adatto ai tuoi gusti |
-| 0-29% | Da evitare |
+| 90-100% | Product perfect for your tastes |
+| 70-89% | Excellent, slight discrepancies |
+| 50-69% | Acceptable, but not optimal |
+| 30-49% | Poorly suited to your tastes |
+| 0-29% | To avoid |
 
-Se hai indicato un contesto alimentare, l'agente valuta anche
-l'abbinamento con il cibo (priorità secondaria).
+If you have indicated a food context, the agent also evaluates
+the food pairing (secondary priority).
 
-### Fase 5 — Raccomandazione
+### Phase 5 — Recommendation
 
-L'agente struttura la risposta in modo chiaro:
+The agent structures the response clearly:
 
-1. **Prima scelta**: il prodotto migliore con indice di preferenza
-   e spiegazione del perché è adatto ai tuoi gusti
-2. **Alternative** (se presenti): in ordine di preferenza decrescente
-3. **Abbinamenti**: suggerimenti gastronomici per i prodotti
-4. **Prodotti da evitare**: quelli che chiaramente non rispettano
-   i tuoi gusti, con spiegazione
+1. **First choice**: the best product with preference index
+   and explanation of why it is suitable for your tastes
+2. **Alternatives** (if present): in descending order of preference
+3. **Pairings**: food pairing suggestions for the products
+4. **Products to avoid**: those that clearly do not respect
+   your tastes, with explanation
 
 ---
 
-## Struttura del progetto
+## Project structure
 
 ```
 drinks-sommelier/
-├── README.md                ← Questo file
-├── LICENSE                  ← Licenza MIT
+├── README.md                ← This file
+├── LICENSE                  ← MIT License
 ├── .gitignore
 └── skills/
-    └── drinks-sommelier/    ← La skill vera e propria
-        ├── SKILL.md         ← Istruzioni complete per l'agente
-        │                      (frontmatter, gusti, operatività,
-        │                       edge case, best practices, esempi,
-        │                       aggiornamento preferenze)
+    └── drinks-sommelier/    ← The actual skill
+        ├── SKILL.md         ← Complete instructions for the agent
+        │                      (frontmatter, tastes, operations,
+        │                       edge cases, best practices, examples,
+        │                       preference updates)
         ├── README.md
         └── data/
-            ├── SETUP.md             ← Guida alla configurazione iniziale
-            │                          (usata solo il primo avvio)
-            ├── birre-note-preferite.md  ← Birre apprezzate e non
-            │                               (da compilare con l'uso)
-            └── vini-noti-preferiti.md   ← Vini apprezzati e non
-                                            (da compilare con l'uso)
+            ├── SETUP.md                   ← Initial setup guide
+            │                                (used only on first launch)
+            ├── known-preferred-beers.md   ← Liked and disliked beers
+            │                                (to be filled in with use)
+            └── known-preferred-wines.md   ← Liked and disliked wines
+                                              (to be filled in with use)
 ```
 
 ---
 
-## Installazione
+## Installation
 
-Puoi installare la skill in due modi:
+You can install the skill in two ways:
 
-### Con npx skills (consigliato)
+### With npx skills (recommended)
 
 ```bash
 npx skills add Johell1NS/drinks-sommelier --skill drinks-sommelier
 ```
 
-### Con git clone
+### With git clone
 
 ```bash
 git clone https://github.com/Johell1NS/drinks-sommelier.git
 cd drinks-sommelier/skills/drinks-sommelier
 ```
 
-Dopo l'installazione, punta il tuo agente alla cartella `drinks-sommelier/` (se usi `npx`) o `drinks-sommelier/skills/drinks-sommelier/` (se usi `git clone`).
+After installation, point your agent to the `drinks-sommelier/` folder (if using `npx`) or `drinks-sommelier/skills/drinks-sommelier/` (if using `git clone`).
 
-**Non serve installare nulla.** Nessun Docker, nessun npm package,
-nessuna dipendenza esterna. La skill è puramente testuale — istruzioni
-che l'agente segue. Le uniche dipendenze sono le capacità dell'agente
-stesso (analisi immagini, ricerca web).
+**No need to install anything.** No Docker, no npm packages,
+no external dependencies. The skill is purely textual — instructions
+that the agent follows. The only dependencies are the agent's own
+capabilities (image analysis, web search).
 
 ---
 
-## Configurazione
+## Configuration
 
-La skill ha bisogno di conoscere i tuoi gusti per funzionare. Puoi
-configurarla in due modi:
+The skill needs to know your tastes to work. You can
+configure it in two ways:
 
-### Configurazione guidata (consigliata)
+### Guided configuration (recommended)
 
-Dopo aver installato la skill, chiedi al tuo agente qualcosa come
-"Aiutami a configurare la skill drinks-sommelier". L'agente caricherà
-SKILL.md, troverà i paragrafi dei gusti ancora da compilare, e ti
-guiderà attraverso la configurazione iniziale usando `data/SETUP.md`.
+After installing the skill, ask your agent something like
+"Help me configure the drinks-sommelier skill". The agent will load
+SKILL.md, find the taste paragraphs still to be filled in, and
+guide you through the initial setup using `data/SETUP.md`.
 
-In alternativa, chiedi semplicemente un consiglio su birre o vini:
-l'agente rileverà automaticamente che la skill non è inizializzata
-e ti farà le domande giuste.
+Alternatively, simply ask for a beer or wine recommendation:
+the agent will automatically detect that the skill is not initialized
+and will ask you the right questions.
 
-### Configurazione manuale
+### Manual configuration
 
-Apri `SKILL.md` e compila i paragrafi:
+Open `SKILL.md` and fill in the paragraphs:
 
-**Gusti dell'utente per le birre**
+**User's tastes for beers**
 ```
-Preferisco birre dolci e non amare.
-Non devono superare i 9° di gradazione alcolica.
-Mi piacciono gli stili belga e le birre fruttate.
-Non mi piacciono IPA, stout e birre troppo amare.
-```
-
-**Gusti dell'utente per i vini**
-```
-Preferisco vini rossi non troppo dolci.
-Per i bianchi, prediligo vermentino e sauvignon.
-Mi piacciono vini con buona acidità e freschezza.
-Non mi piacciono vini passiti o liquorosi.
+I prefer sweet and not bitter beers.
+They must not exceed 9° alcohol by volume.
+I like Belgian styles and fruity beers.
+I dislike IPAs, stouts, and beers that are too bitter.
 ```
 
-Puoi anche popolare i file `data/birre-note-preferite.md` e
-`data/vini-noti-preferiti.md` con prodotti specifici che hai
-già provato e valutato. Questa parte è facoltativa ma utile
-per affinare il profilo.
-
-**Esempio — `data/birre-note-preferite.md`**
+**User's tastes for wines**
 ```
-# BIRRE APPREZZATE
+I prefer red wines that are not too sweet.
+For whites, I prefer vermentino and sauvignon.
+I like wines with good acidity and freshness.
+I dislike passito or fortified wines.
+```
+
+You can also populate the files `data/known-preferred-beers.md` and
+`data/known-preferred-wines.md` with specific products you have
+already tried and evaluated. This part is optional but useful
+for refining the profile.
+
+**Example — `data/known-preferred-beers.md`**
+```
+# LIKED BEERS
 - Kwak
 - Triple Karmeliet
 - La Trappe Blond
 - Flea Margherita
 
-# BIRRE NON APPREZZATE
-- Qualsiasi IPA
+# DISLIKED BEERS
+- Any IPA
 - Stout
-- Birre con gradazione superiore a 9°
+- Beers with alcohol content above 9°
 ```
 
-**Esempio — `data/vini-noti-preferiti.md`**
+**Example — `data/known-preferred-wines.md`**
 ```
-# VINI APPREZZATI
+# LIKED WINES
 - Vermentino Costamolino
 - Syrah Soraia Casale Valle Chiesa
 - Rebeca Firriato
 
-# VINI NON APPREZZATI
-- Vini passiti
-- Vini liquorosi
+# DISLIKED WINES
+- Passito wines
+- Fortified wines
 ```
 
-### Aggiornamento nel tempo
+### Updating over time
 
-Ogni volta che esprimi un giudizio su un prodotto ("questa mi piace",
-"questo non mi piace"), l'agente aggiorna automaticamente i file
-`data/`. Le regole di gusto nei paragrafi di SKILL.md invece
-vengono aggiornate solo con la tua conferma esplicita, perché
-sono vincolanti per le valutazioni future.
-
----
-
-## Esempi di utilizzo
-
-### Scenario 1 — Scaffale vini (immagine)
-Fotografi uno scaffale di un'enoteca. L'agente identifica i vini,
-li cerca tutti sul web, li confronta con il tuo profilo. Ti dice
-quale prendere, perché, e con cosa abbinarlo.
-
-### Scenario 2 — Menu birre (immagine)
-Fotografi il menu birre di un pub. L'agente ignora cocktail,
-superalcolici, ecc... analizza solo le birre, cerca informazioni su
-ciascuna. Ti suggerisce la birra più adatta ai tuoi gusti.
-
-### Scenario 3 — Lista testuale mista
-Scrivi "Ho questi vini: Chianti Classico, Vermentino Costamolino,
-Amarone. E queste birre: Kwak, IPA artigianale locale, Leffe Blonde."
-L'agente valuta entrambe le categorie e ti dice qual è la scelta
-migliore in assoluto.
-
-### Scenario 4 — Richiesta senza lista
-"Devo prendere un vino per una cena, cosa mi consigli?" L'agente
-non inventa. Chiede cosa hai a disposizione, che tipo di cena,
-e se hai già dei vini in mente.
-
-### Scenario 5 — Nuova preferenza espressa
-Dopo un suggerimento dici "Quella birra mi è piaciuta molto".
-L'agente la aggiunge ai tuoi preferiti e aggiorna il profilo
-per essere ancora più preciso la prossima volta.
+Every time you express a judgment on a product ("I like this one",
+"I don't like this one"), the agent automatically updates the
+`data/` files. The taste rules in the SKILL.md paragraphs, on the other hand,
+are updated only with your explicit confirmation, because
+they are binding for future evaluations.
 
 ---
 
-## Cosa questa skill NON fa
+## Usage examples
 
-- **Non fornisce valutazioni professionali di degustazione.** I
-  suggerimenti si basano su dati oggettivi (stile, gradazione,
-  amarezza) e sulle preferenze dichiarate. Non sostituisce un
-  sommelier umano in contesti formali.
+### Scenario 1 — Wine shelf (image)
+You take a photo of a wine shop shelf. The agent identifies the wines,
+researches them all on the web, compares them against your profile. It tells you
+which one to pick, why, and what to pair it with.
 
-- **Non gestisce altre bevande.** Liquori, cocktail, superalcolici,
-  bibite, analcolici — tutto ciò che non è birra o vino viene
-  ignorato.
+### Scenario 2 — Beer menu (image)
+You take a photo of a pub's beer menu. The agent ignores cocktails,
+spirits, etc... analyzes only the beers, searches for information on
+each one. It suggests the beer most suited to your tastes.
+
+### Scenario 3 — Mixed text list
+You write "I have these wines: Chianti Classico, Vermentino Costamolino,
+Amarone. And these beers: Kwak, local craft IPA, Leffe Blonde."
+The agent evaluates both categories and tells you what the best
+choice is overall.
+
+### Scenario 4 — Request without a list
+"I need to get a wine for a dinner, what do you recommend?" The agent
+does not invent. It asks what you have available, what kind of dinner,
+and if you already have any wines in mind.
+
+### Scenario 5 — New preference expressed
+After a suggestion you say "I really liked that beer".
+The agent adds it to your favorites and updates the profile
+to be even more precise next time.
 
 ---
 
-## Licenza
+## What this skill does NOT do
+
+- **It does not provide professional tasting evaluations.** The
+  suggestions are based on objective data (style, alcohol content,
+  bitterness) and on declared preferences. It does not replace a
+  human sommelier in formal contexts.
+
+- **It does not handle other beverages.** Spirits, cocktails, liquors,
+  sodas, non-alcoholic drinks — anything that is not beer or wine is
+  ignored.
+
+---
+
+## License
 MIT

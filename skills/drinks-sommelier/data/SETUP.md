@@ -1,50 +1,50 @@
-# drinks-sommelier — Guida alla configurazione iniziale
+# drinks-sommelier — Initial Setup Guide
 
-Questa guida viene usata dall'agente **solo** quando la skill viene caricata per la prima volta e i paragrafi dei gusti non sono ancora stati compilati. Dopo la prima configurazione, questo file non serve più.
-
----
-
-## Cosa deve fare l'agente
-
-1. Spiegare brevemente all'utente che la skill ha bisogno di conoscere i suoi gusti per funzionare
-2. Fare domande mirate per compilare i paragrafi dei gusti, partendo dal generale al particolare
-3. Dopo aver raccolto le preferenze, **modifica ESCLUSIVAMENTE i paragrafi** "Gusti dell'utente per le birre" e "Gusti dell'utente per i vini" nel file `SKILL.md`, sostituendo il testo "Inserisci qui le preferenze" con quanto appreso. Non alterare nessun'altra sezione del file.
-4. **Prima di modificare**, rileggi attentamente `SKILL.md` per individuare con precisione le righe da sostituire
-5. (Facoltativo) Popolare i file `data/` con i prodotti specifici che l'utente menziona
-6. Verificare di aver capito correttamente prima di procedere
+This guide is used by the agent **only** when the skill is loaded for the first time and the taste paragraphs have not yet been filled in. After the first setup, this file is no longer needed.
 
 ---
 
-## Esempi per compilare i paragrafi dei gusti
+## What the agent must do
 
-### Esempio — Paragrafo "Gusti dell'utente per le birre" (compilato)
+1. Briefly explain to the user that the skill needs to know their tastes in order to work
+2. Ask targeted questions to fill in the taste paragraphs, proceeding from general to specific
+3. After collecting the preferences, **modify ONLY the paragraphs** "User's tastes for beers" and "User's tastes for wines" in the `SKILL.md` file, replacing the text "Enter your preferences here" with what has been learned. Do not alter any other section of the file.
+4. **Before modifying**, carefully re-read `SKILL.md` to precisely identify the lines to replace
+5. (Optional) Populate the `data/` files with the specific products the user mentions
+6. Verify that you have understood correctly before proceeding
+
+---
+
+## Examples for filling in the taste paragraphs
+
+### Example — "User's tastes for beers" paragraph (filled in)
 
 ```
-Preferisco birre dolci e non amare.
-Non devono superare i 9° di gradazione alcolica.
-Mi piacciono gli stili belga (blond, tripel, witbier), le birre fruttate e le sour.
-Non mi piacciono IPA, stout e birre troppo luppolate o amare.
-Preferisco corpi medio-leggeri e carbonazione media.
+I prefer sweet and not bitter beers.
+They must not exceed 9° alcohol by volume.
+I like Belgian styles (blond, tripel, witbier), fruity beers, and sours.
+I dislike IPAs, stouts, and beers that are too hoppy or bitter.
+I prefer medium-light bodies and medium carbonation.
 ```
 
-### Esempio — Paragrafo "Gusti dell'utente per i vini" (compilato)
+### Example — "User's tastes for wines" paragraph (filled in)
 
 ```
-Preferisco vini rossi non troppo dolci, corposi ma equilibrati.
-Per i bianchi, prediligo vermentino, sauvignon e fiano.
-Mi piacciono vini con buona acidità e freschezza.
-Non mi piacciono vini troppo dolci, passiti o liquorosi.
-Preferisco vini italiani, in particolare del centro-sud.
+I prefer red wines that are not too sweet, full-bodied but balanced.
+For whites, I prefer vermentino, sauvignon, and fiano.
+I like wines with good acidity and freshness.
+I dislike wines that are too sweet, passito, or fortified.
+I prefer Italian wines, particularly from the center-south.
 ```
 
 ---
 
-## Esempi per compilare i file data/
+## Examples for filling in the data/ files
 
-### Esempio — `data/birre-note-preferite.md`
+### Example — `data/known-preferred-beers.md`
 
 ```markdown
-# BIRRE APPREZZATE
+# LIKED BEERS
 - Kwak
 - Super open Baladin
 - Lisa Birra del Borgo
@@ -61,16 +61,16 @@ Preferisco vini italiani, in particolare del centro-sud.
 - Mastri Birrai Umbri Cotta 68
 - Baladin Nazionale Blanche
 
-# BIRRE NON APPREZZATE
-- Qualsiasi IPA
+# DISLIKED BEERS
+- Any IPA
 - Stout
-- Birre con gradazione superiore a 9°
+- Beers with alcohol content above 9°
 ```
 
-### Esempio — `data/vini-noti-preferiti.md`
+### Example — `data/known-preferred-wines.md`
 
 ```markdown
-# VINI APPREZZATI
+# LIKED WINES
 - Vermentino Costamolino
 - Alice Verdeca Produttori di Manduria
 - Fiano Zin Produttori di Manduria
@@ -87,40 +87,40 @@ Preferisco vini italiani, in particolare del centro-sud.
 - Mandonion Cantolio
 - I 4 Mori Castel de Paolis
 
-# VINI NON APPREZZATI
-- Vini passiti
-- Vini liquorosi
-- Vini troppo dolci in generale
+# DISLIKED WINES
+- Passito wines
+- Fortified wines
+- Wines that are too sweet in general
 ```
 
 ---
 
-## Domande guida per l'agente
+## Guiding questions for the agent
 
-Se l'utente non sa da dove iniziare, l'agente può fare queste domande in ordine:
+If the user does not know where to start, the agent can ask these questions in order:
 
-**Per le birre:**
-1. "Preferisci birre dolci o amare?"
-2. "Che gradazione alcolica massima preferisci?"
-3. "Hai stili di birra che ti piacciono in particolare? (es. bionde, rosse, fruttate, speziate)"
-4. "Ci sono stili che non sopporti? (es. IPA, stout, amare)"
-5. "Hai qualche birra specifica che sai già di apprezzare?"
+**For beers:**
+1. "Do you prefer sweet or bitter beers?"
+2. "What is the maximum alcohol content you prefer?"
+3. "Are there beer styles you particularly like? (e.g. blond, red, fruity, spiced)"
+4. "Are there styles you cannot stand? (e.g. IPA, stout, bitter)"
+5. "Do you have any specific beer you already know you like?"
 
-**Per i vini:**
-1. "Preferisci vini rossi, bianchi, o entrambi?"
-2. "Per i rossi, li preferisci più secchi o più morbidi?"
-3. "Hai vitigni preferiti? (es. vermentino, syrah, fiano)"
-4. "Hai preferenze geografiche? (es. vini italiani, francesi, di una regione specifica)"
-5. "Hai qualche vino specifico che sai già di apprezzare?"
+**For wines:**
+1. "Do you prefer red, white, or both?"
+2. "For reds, do you prefer them drier or softer?"
+3. "Do you have preferred grape varieties? (e.g. vermentino, syrah, fiano)"
+4. "Do you have geographic preferences? (e.g. Italian, French wines, from a specific region)"
+5. "Do you have any specific wine you already know you like?"
 
 ---
 
-## Verifica finale
+## Final check
 
-Prima di considerare la configurazione completata, assicurati che:
-- [ ] Il paragrafo "Gusti dell'utente per le birre" in `SKILL.md` contenga almeno 2-3 informazioni (es. dolce/amaro, gradazione)
-- [ ] Il paragrafo "Gusti dell'utente per i vini" in `SKILL.md` contenga almeno 2-3 informazioni (es. rosso/bianco, secco/dolce)
-- [ ] (Facoltativo) I file `data/` contengano almeno i prodotti eventualmente citati dall'utente
-- [ ] L'utente abbia confermato che il profilo è corretto
+Before considering the setup complete, make sure that:
+- [ ] The "User's tastes for beers" paragraph in `SKILL.md` contains at least 2-3 pieces of information (e.g. sweet/bitter, alcohol content)
+- [ ] The "User's tastes for wines" paragraph in `SKILL.md` contains at least 2-3 pieces of information (e.g. red/white, dry/sweet)
+- [ ] (Optional) The `data/` files contain at least the products eventually mentioned by the user
+- [ ] The user has confirmed that the profile is correct
 
-Se anche solo una linea guida è presente, la skill può iniziare a funzionare. I dettagli si perfezioneranno con l'uso.
+If even a single guideline is present, the skill can start working. The details will be refined with use.

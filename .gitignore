@@ -1,3 +1,7 @@
+# Workspace config
+AGENTS.md
+
+# OS files
 .DS_Store
 Thumbs.db
 *.swp
