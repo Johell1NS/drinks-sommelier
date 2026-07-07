@@ -230,9 +230,6 @@ npx skills add Johell1NS/drinks-sommelier --skill drinks-sommelier
 git clone https://github.com/Johell1NS/drinks-sommelier.git
 ```
 
-Ensuite, copiez (ou créez un lien symbolique) le dossier `skills/drinks-sommelier/` vers
-le répertoire des skills de votre agent.
-
 > **Note :** contrairement à `npx skills add`, git clone ne sait pas où
 > sont stockées les skills de votre agent. Vous devez placer la skill dans le chemin
 > correct pour votre agent (ex. OpenCode utilise `~/.config/opencode/skills/`,

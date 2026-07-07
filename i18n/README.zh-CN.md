@@ -227,9 +227,6 @@ npx skills add Johell1NS/drinks-sommelier --skill drinks-sommelier
 git clone https://github.com/Johell1NS/drinks-sommelier.git
 ```
 
-然后将 `skills/drinks-sommelier/` 文件夹复制（或符号链接）到
-你代理的技能目录中。
-
 > **注意：** 与 `npx skills add` 不同，git clone 不知道你的
 > 代理技能存储在何处。你需要将技能放置在代理的
 > 正确路径中（例如，OpenCode 使用 `~/.config/opencode/skills/`，

@@ -232,9 +232,6 @@ npx skills add Johell1NS/drinks-sommelier --skill drinks-sommelier
 git clone https://github.com/Johell1NS/drinks-sommelier.git
 ```
 
-その後、`skills/drinks-sommelier/` フォルダをエージェントの
-スキルディレクトリにコピー（またはシンボリックリンク）します。
-
 > **注意：** `npx skills add` とは異なり、git clone は
 > エージェントのスキル保存場所を知りません。スキルを
 > エージェントの正しいパスに配置する必要があります

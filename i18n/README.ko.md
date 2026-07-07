@@ -232,9 +232,6 @@ npx skills add Johell1NS/drinks-sommelier --skill drinks-sommelier
 git clone https://github.com/Johell1NS/drinks-sommelier.git
 ```
 
-그런 다음 `skills/drinks-sommelier/` 폴더를 에이전트의
-스킬 디렉토리로 복사(또는 심볼릭 링크)하세요.
-
 > **참고:** `npx skills add`와 달리, git clone은
 > 에이전트의 스킬이 저장된 위치를 알 수 없습니다.
 > 스킬을 에이전트의 올바른 경로에 배치해야 합니다

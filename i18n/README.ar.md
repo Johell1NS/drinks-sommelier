@@ -230,9 +230,6 @@ npx skills add Johell1NS/drinks-sommelier --skill drinks-sommelier
 git clone https://github.com/Johell1NS/drinks-sommelier.git
 ```
 
-ثم انسخ (أو أنشئ رابطاً رمزياً) مجلد `skills/drinks-sommelier/` إلى
-دليل مهارات وكيلك.
-
 > **ملاحظة:** على عكس `npx skills add`، لا يعرف git clone أين
 > يتم تخزين مهارات وكيلك. تحتاج إلى وضع المهارة في المسار
 > الصحيح لوكيلك (مثلاً، OpenCode يستخدم `~/.config/opencode/skills/`،
